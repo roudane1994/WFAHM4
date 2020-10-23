@@ -89,14 +89,6 @@ public class Demande implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "demandes", allowSetters = true)
-    private DemandeInfo demandeInfos;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "demandes", allowSetters = true)
-    private PieceJoindre pieceJoindres;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "demandes", allowSetters = true)
     private Magasin magasin;
 
     @ManyToOne
@@ -398,32 +390,6 @@ public class Demande implements Serializable {
 
     public void setPieceJoindres(Set<PieceJoindre> pieceJoindres) {
         this.pieceJoindres = pieceJoindres;
-    }
-
-    public DemandeInfo getDemandeInfos() {
-        return demandeInfos;
-    }
-
-    public Demande demandeInfos(DemandeInfo demandeInfo) {
-        this.demandeInfos = demandeInfo;
-        return this;
-    }
-
-    public void setDemandeInfos(DemandeInfo demandeInfo) {
-        this.demandeInfos = demandeInfo;
-    }
-
-    public PieceJoindre getPieceJoindres() {
-        return pieceJoindres;
-    }
-
-    public Demande pieceJoindres(PieceJoindre pieceJoindre) {
-        this.pieceJoindres = pieceJoindre;
-        return this;
-    }
-
-    public void setPieceJoindres(PieceJoindre pieceJoindre) {
-        this.pieceJoindres = pieceJoindre;
     }
 
     public Magasin getMagasin() {

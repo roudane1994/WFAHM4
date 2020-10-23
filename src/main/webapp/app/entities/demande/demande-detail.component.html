@@ -80,18 +80,6 @@
                 <dd>
                     <span>{{ demande.prixNegocie }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm4App.demande.demandeInfos">Demande Infos</span></dt>
-                <dd>
-                    <div *ngIf="demande.demandeInfos">
-                        <a [routerLink]="['/demande-info', demande.demandeInfos?.id, 'view']">{{ demande.demandeInfos?.id }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="wfahm4App.demande.pieceJoindres">Piece Joindres</span></dt>
-                <dd>
-                    <div *ngIf="demande.pieceJoindres">
-                        <a [routerLink]="['/piece-joindre', demande.pieceJoindres?.id, 'view']">{{ demande.pieceJoindres?.id }}</a>
-                    </div>
-                </dd>
                 <dt><span jhiTranslate="wfahm4App.demande.magasin">Magasin</span></dt>
                 <dd>
                     <div *ngIf="demande.magasin">

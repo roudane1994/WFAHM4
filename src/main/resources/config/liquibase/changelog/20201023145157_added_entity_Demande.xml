@@ -70,12 +70,6 @@
             <column name="prix_negocie" type="double">
                 <constraints nullable="true" />
             </column>
-            <column name="demande_infos_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-            <column name="piece_joindres_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="magasin_id" type="bigint">
                 <constraints nullable="true" />
             </column>

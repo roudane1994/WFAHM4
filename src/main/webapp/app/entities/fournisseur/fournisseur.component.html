@@ -24,8 +24,6 @@
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.libelle">Libelle</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurMagasin">Demande Pour Fournisseur Magasin</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurFinal">Demande Pour Fournisseur Final</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -33,16 +31,6 @@
                 <tr *ngFor="let fournisseur of fournisseurs ;trackBy: trackId">
                     <td><a [routerLink]="['/fournisseur', fournisseur.id, 'view']">{{ fournisseur.id }}</a></td>
                     <td>{{ fournisseur.libelle }}</td>
-                    <td>
-                        <div *ngIf="fournisseur.demandePourFournisseurMagasin">
-                            <a [routerLink]="['/demande', fournisseur.demandePourFournisseurMagasin?.id, 'view']" >{{ fournisseur.demandePourFournisseurMagasin?.id }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="fournisseur.demandePourFournisseurFinal">
-                            <a [routerLink]="['/demande', fournisseur.demandePourFournisseurFinal?.id, 'view']" >{{ fournisseur.demandePourFournisseurFinal?.id }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

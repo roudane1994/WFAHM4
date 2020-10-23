@@ -136,22 +136,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.demandeInfos" for="field_demandeInfos">Demande Infos</label>
-                    <select class="form-control" id="field_demandeInfos" name="demandeInfos" formControlName="demandeInfos">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="demandeInfoOption.id === editForm.get('demandeInfos')!.value?.id ? editForm.get('demandeInfos')!.value : demandeInfoOption" *ngFor="let demandeInfoOption of demandeinfos; trackBy: trackById">{{ demandeInfoOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.pieceJoindres" for="field_pieceJoindres">Piece Joindres</label>
-                    <select class="form-control" id="field_pieceJoindres" name="pieceJoindres" formControlName="pieceJoindres">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="pieceJoindreOption.id === editForm.get('pieceJoindres')!.value?.id ? editForm.get('pieceJoindres')!.value : pieceJoindreOption" *ngFor="let pieceJoindreOption of piecejoindres; trackBy: trackById">{{ pieceJoindreOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="wfahm4App.demande.magasin" for="field_magasin">Magasin</label>
                     <select class="form-control" id="field_magasin" name="magasin" formControlName="magasin">
                         <option [ngValue]="null"></option>

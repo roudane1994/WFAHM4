@@ -19,12 +19,6 @@
             <column name="libelle" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="demande_pour_fournisseur_magasin_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-            <column name="demande_pour_fournisseur_final_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>

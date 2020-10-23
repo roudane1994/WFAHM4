@@ -1,6 +1,5 @@
 package ma.beit.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -40,14 +39,6 @@ public class Magasin implements Serializable {
     @OneToMany(mappedBy = "magasin")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<MagasinUtilisateur> magasinUtilisateurs = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "magasins", allowSetters = true)
-    private MagasinUtilisateur magasinUtilisateurs;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "magasins", allowSetters = true)
-    private Demande demandes;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -145,32 +136,6 @@ public class Magasin implements Serializable {
 
     public void setMagasinUtilisateurs(Set<MagasinUtilisateur> magasinUtilisateurs) {
         this.magasinUtilisateurs = magasinUtilisateurs;
-    }
-
-    public MagasinUtilisateur getMagasinUtilisateurs() {
-        return magasinUtilisateurs;
-    }
-
-    public Magasin magasinUtilisateurs(MagasinUtilisateur magasinUtilisateur) {
-        this.magasinUtilisateurs = magasinUtilisateur;
-        return this;
-    }
-
-    public void setMagasinUtilisateurs(MagasinUtilisateur magasinUtilisateur) {
-        this.magasinUtilisateurs = magasinUtilisateur;
-    }
-
-    public Demande getDemandes() {
-        return demandes;
-    }
-
-    public Magasin demandes(Demande demande) {
-        this.demandes = demande;
-        return this;
-    }
-
-    public void setDemandes(Demande demande) {
-        this.demandes = demande;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
