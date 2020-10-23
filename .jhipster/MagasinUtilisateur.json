@@ -1,0 +1,33 @@
+{
+  "name": "MagasinUtilisateur",
+  "fields": [
+    {
+      "fieldName": "nordre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "utilisateur",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "magasin",
+      "otherEntityRelationshipName": "magasinUtilisateur",
+      "relationshipName": "magasin",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023145457",
+  "entityTableName": "magasin_utilisateur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

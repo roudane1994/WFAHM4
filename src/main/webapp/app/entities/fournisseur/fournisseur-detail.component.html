@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fournisseur">
+            <h2><span jhiTranslate="wfahm4App.fournisseur.detail.title">Fournisseur</span> {{ fournisseur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.fournisseur.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ fournisseur.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurMagasin">Demande Pour Fournisseur Magasin</span></dt>
+                <dd>
+                    <div *ngIf="fournisseur.demandePourFournisseurMagasin">
+                        <a [routerLink]="['/demande', fournisseur.demandePourFournisseurMagasin?.id, 'view']">{{ fournisseur.demandePourFournisseurMagasin?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurFinal">Demande Pour Fournisseur Final</span></dt>
+                <dd>
+                    <div *ngIf="fournisseur.demandePourFournisseurFinal">
+                        <a [routerLink]="['/demande', fournisseur.demandePourFournisseurFinal?.id, 'view']">{{ fournisseur.demandePourFournisseurFinal?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fournisseur', fournisseur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

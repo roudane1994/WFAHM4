@@ -1,0 +1,190 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-demande-heading" jhiTranslate="wfahm4App.demande.home.createOrEditLabel">Create or edit a Demande</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                           formControlName="numero"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.rtr" for="field_rtr">Rtr</label>
+                    <input type="text" class="form-control" name="rtr" id="field_rtr"
+                           formControlName="rtr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.rtrLibelle" for="field_rtrLibelle">Rtr Libelle</label>
+                    <input type="text" class="form-control" name="rtrLibelle" id="field_rtrLibelle"
+                           formControlName="rtrLibelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.objet" for="field_objet">Objet</label>
+                    <input type="text" class="form-control" name="objet" id="field_objet"
+                           formControlName="objet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.dateBesion" for="field_dateBesion">Date Besion</label>
+                    <div class="input-group">
+                        <input id="field_dateBesion" type="text" class="form-control" name="dateBesion" ngbDatepicker #dateBesionDp="ngbDatepicker" formControlName="dateBesion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateBesionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.dateCreation" for="field_dateCreation">Date Creation</label>
+                    <div class="input-group">
+                        <input id="field_dateCreation" type="text" class="form-control" name="dateCreation" ngbDatepicker #dateCreationDp="ngbDatepicker" formControlName="dateCreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateCreationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.createur" for="field_createur">Createur</label>
+                    <input type="text" class="form-control" name="createur" id="field_createur"
+                           formControlName="createur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.budget" for="field_budget">Budget</label>
+                    <input type="number" class="form-control" name="budget" id="field_budget"
+                           formControlName="budget"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.affectationLibelle" for="field_affectationLibelle">Affectation Libelle</label>
+                    <input type="text" class="form-control" name="affectationLibelle" id="field_affectationLibelle"
+                           formControlName="affectationLibelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.dateAffictation" for="field_dateAffictation">Date Affictation</label>
+                    <div class="input-group">
+                        <input id="field_dateAffictation" type="text" class="form-control" name="dateAffictation" ngbDatepicker #dateAffictationDp="ngbDatepicker" formControlName="dateAffictation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateAffictationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.moreInformation" for="field_moreInformation">More Information</label>
+                    <input type="text" class="form-control" name="moreInformation" id="field_moreInformation"
+                           formControlName="moreInformation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.etat" for="field_etat">Etat</label>
+                    <input type="text" class="form-control" name="etat" id="field_etat"
+                           formControlName="etat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.messageValidation" for="field_messageValidation">Message Validation</label>
+                    <input type="text" class="form-control" name="messageValidation" id="field_messageValidation"
+                           formControlName="messageValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.messageClouture" for="field_messageClouture">Message Clouture</label>
+                    <input type="text" class="form-control" name="messageClouture" id="field_messageClouture"
+                           formControlName="messageClouture"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.dateClouture" for="field_dateClouture">Date Clouture</label>
+                    <div class="input-group">
+                        <input id="field_dateClouture" type="text" class="form-control" name="dateClouture" ngbDatepicker #dateCloutureDp="ngbDatepicker" formControlName="dateClouture"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateCloutureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.meilleurPrixMagasin" for="field_meilleurPrixMagasin">Meilleur Prix Magasin</label>
+                    <input type="number" class="form-control" name="meilleurPrixMagasin" id="field_meilleurPrixMagasin"
+                           formControlName="meilleurPrixMagasin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.prixNegocie" for="field_prixNegocie">Prix Negocie</label>
+                    <input type="number" class="form-control" name="prixNegocie" id="field_prixNegocie"
+                           formControlName="prixNegocie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.demandeInfos" for="field_demandeInfos">Demande Infos</label>
+                    <select class="form-control" id="field_demandeInfos" name="demandeInfos" formControlName="demandeInfos">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="demandeInfoOption.id === editForm.get('demandeInfos')!.value?.id ? editForm.get('demandeInfos')!.value : demandeInfoOption" *ngFor="let demandeInfoOption of demandeinfos; trackBy: trackById">{{ demandeInfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.pieceJoindres" for="field_pieceJoindres">Piece Joindres</label>
+                    <select class="form-control" id="field_pieceJoindres" name="pieceJoindres" formControlName="pieceJoindres">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pieceJoindreOption.id === editForm.get('pieceJoindres')!.value?.id ? editForm.get('pieceJoindres')!.value : pieceJoindreOption" *ngFor="let pieceJoindreOption of piecejoindres; trackBy: trackById">{{ pieceJoindreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.magasin" for="field_magasin">Magasin</label>
+                    <select class="form-control" id="field_magasin" name="magasin" formControlName="magasin">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="magasinOption.id === editForm.get('magasin')!.value?.id ? editForm.get('magasin')!.value : magasinOption" *ngFor="let magasinOption of magasins; trackBy: trackById">{{ magasinOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.fournisseurMagasin" for="field_fournisseurMagasin">Fournisseur Magasin</label>
+                    <select class="form-control" id="field_fournisseurMagasin" name="fournisseurMagasin" formControlName="fournisseurMagasin">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fournisseurOption.id === editForm.get('fournisseurMagasin')!.value?.id ? editForm.get('fournisseurMagasin')!.value : fournisseurOption" *ngFor="let fournisseurOption of fournisseurs; trackBy: trackById">{{ fournisseurOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demande.fournisseurFinal" for="field_fournisseurFinal">Fournisseur Final</label>
+                    <select class="form-control" id="field_fournisseurFinal" name="fournisseurFinal" formControlName="fournisseurFinal">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fournisseurOption.id === editForm.get('fournisseurFinal')!.value?.id ? editForm.get('fournisseurFinal')!.value : fournisseurOption" *ngFor="let fournisseurOption of fournisseurs; trackBy: trackById">{{ fournisseurOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

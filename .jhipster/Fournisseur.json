@@ -1,0 +1,48 @@
+{
+  "name": "Fournisseur",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseurMagasin",
+      "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseurFinal",
+      "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseur",
+      "relationshipName": "demandePourFournisseurMagasin",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseur",
+      "relationshipName": "demandePourFournisseurFinal",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023145057",
+  "entityTableName": "fournisseur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demandeInfo">
+            <h2><span jhiTranslate="wfahm4App.demandeInfo.detail.title">Demande Info</span> {{ demandeInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.nordre">Nordre</span></dt>
+                <dd>
+                    <span>{{ demandeInfo.nordre }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.infoDemande">Info Demande</span></dt>
+                <dd>
+                    <span>{{ demandeInfo.infoDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.reponse">Reponse</span></dt>
+                <dd>
+                    <span>{{ demandeInfo.reponse }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.dateDemande">Date Demande</span></dt>
+                <dd>
+                    <span>{{ demandeInfo.dateDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.dateReponse">Date Reponse</span></dt>
+                <dd>
+                    <span>{{ demandeInfo.dateReponse }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demandeInfo.demande">Demande</span></dt>
+                <dd>
+                    <div *ngIf="demandeInfo.demande">
+                        <a [routerLink]="['/demande', demandeInfo.demande?.id, 'view']">{{ demandeInfo.demande?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande-info', demandeInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

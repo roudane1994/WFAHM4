@@ -1,0 +1,21 @@
+{
+  "name": "Objet",
+  "fields": [
+    {
+      "fieldName": "objet",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201023145657",
+  "entityTableName": "objet",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

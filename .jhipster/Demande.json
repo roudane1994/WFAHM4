@@ -1,0 +1,137 @@
+{
+  "name": "Demande",
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rtr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rtrLibelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "objet",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateBesion",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "createur",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "budget",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "affectationLibelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateAffictation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "moreInformation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "messageValidation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "messageClouture",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateClouture",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "meilleurPrixMagasin",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prixNegocie",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demandeInfo",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "demandeInfo"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pieceJoindre",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "pieceJoindre"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demandeInfo",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "demandeInfos",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pieceJoindre",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "pieceJoindres",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "magasin",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "magasin",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fournisseur",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "fournisseurMagasin",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fournisseur",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "fournisseurFinal",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023145157",
+  "entityTableName": "demande",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

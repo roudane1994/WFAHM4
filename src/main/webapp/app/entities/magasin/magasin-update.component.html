@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-magasin-heading" jhiTranslate="wfahm4App.magasin.home.createOrEditLabel">Create or edit a Magasin</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.libelle" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.rtr" for="field_rtr">Rtr</label>
+                    <input type="text" class="form-control" name="rtr" id="field_rtr"
+                           formControlName="rtr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.magasinUtilisateurs" for="field_magasinUtilisateurs">Magasin Utilisateurs</label>
+                    <select class="form-control" id="field_magasinUtilisateurs" name="magasinUtilisateurs" formControlName="magasinUtilisateurs">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="magasinUtilisateurOption.id === editForm.get('magasinUtilisateurs')!.value?.id ? editForm.get('magasinUtilisateurs')!.value : magasinUtilisateurOption" *ngFor="let magasinUtilisateurOption of magasinutilisateurs; trackBy: trackById">{{ magasinUtilisateurOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.demandes" for="field_demandes">Demandes</label>
+                    <select class="form-control" id="field_demandes" name="demandes" formControlName="demandes">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="demandeOption.id === editForm.get('demandes')!.value?.id ? editForm.get('demandes')!.value : demandeOption" *ngFor="let demandeOption of demandes; trackBy: trackById">{{ demandeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "wfahm4App": {
+    "pieceJoindre": {
+      "home": {
+        "title": "PieceJoindres",
+        "createLabel": "Créer un nouveau Piece Joindre",
+        "createOrEditLabel": "Créer ou éditer un Piece Joindre",
+        "notFound": "Aucun Piece Joindre trouvé"
+      },
+      "created": "Un nouveau Piece Joindre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Piece Joindre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Piece Joindre avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Piece Joindre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Piece Joindre"
+      },
+      "nordre": "Nordre",
+      "name": "Name",
+      "url": "Url",
+      "demande": "Demande"
+    }
+  }
+}

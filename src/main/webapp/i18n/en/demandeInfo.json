@@ -1,0 +1,27 @@
+{
+  "wfahm4App": {
+    "demandeInfo": {
+      "home": {
+        "title": "Demande Infos",
+        "createLabel": "Create a new Demande Info",
+        "createOrEditLabel": "Create or edit a Demande Info",
+        "notFound": "No Demande Infos found"
+      },
+      "created": "A new Demande Info is created with identifier {{ param }}",
+      "updated": "A Demande Info is updated with identifier {{ param }}",
+      "deleted": "A Demande Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Demande Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Demande Info"
+      },
+      "nordre": "Nordre",
+      "infoDemande": "Info Demande",
+      "reponse": "Reponse",
+      "dateDemande": "Date Demande",
+      "dateReponse": "Date Reponse",
+      "demande": "Demande"
+    }
+  }
+}
