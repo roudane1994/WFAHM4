@@ -12,18 +12,6 @@
                 <dd>
                     <span>{{ fournisseur.libelle }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurMagasin">Demande Pour Fournisseur Magasin</span></dt>
-                <dd>
-                    <div *ngIf="fournisseur.demandePourFournisseurMagasin">
-                        <a [routerLink]="['/demande', fournisseur.demandePourFournisseurMagasin?.id, 'view']">{{ fournisseur.demandePourFournisseurMagasin?.id }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurFinal">Demande Pour Fournisseur Final</span></dt>
-                <dd>
-                    <div *ngIf="fournisseur.demandePourFournisseurFinal">
-                        <a [routerLink]="['/demande', fournisseur.demandePourFournisseurFinal?.id, 'view']">{{ fournisseur.demandePourFournisseurFinal?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

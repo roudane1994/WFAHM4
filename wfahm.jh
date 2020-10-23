@@ -62,13 +62,4 @@ relationship OneToMany {
   
 }
 
-relationship ManyToOne{
-  Demande{demandeInfos} to DemandeInfo,
-  Demande{pieceJoindres} to PieceJoindre,
-  Magasin{magasinUtilisateurs} to MagasinUtilisateur ,
-  Magasin{demandes} to Demande,
-  Fournisseur{demandePourFournisseurMagasin} to Demande,
-  Fournisseur{demandePourFournisseurFinal} to Demande,
-
-}
 

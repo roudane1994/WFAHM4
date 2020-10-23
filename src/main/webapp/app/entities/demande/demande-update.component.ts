@@ -7,16 +7,12 @@ import { Observable } from 'rxjs';
 
 import { IDemande, Demande } from 'app/shared/model/demande.model';
 import { DemandeService } from './demande.service';
-import { IDemandeInfo } from 'app/shared/model/demande-info.model';
-import { DemandeInfoService } from 'app/entities/demande-info/demande-info.service';
-import { IPieceJoindre } from 'app/shared/model/piece-joindre.model';
-import { PieceJoindreService } from 'app/entities/piece-joindre/piece-joindre.service';
 import { IMagasin } from 'app/shared/model/magasin.model';
 import { MagasinService } from 'app/entities/magasin/magasin.service';
 import { IFournisseur } from 'app/shared/model/fournisseur.model';
 import { FournisseurService } from 'app/entities/fournisseur/fournisseur.service';
 
-type SelectableEntity = IDemandeInfo | IPieceJoindre | IMagasin | IFournisseur;
+type SelectableEntity = IMagasin | IFournisseur;
 
 @Component({
   selector: 'jhi-demande-update',
@@ -24,8 +20,6 @@ type SelectableEntity = IDemandeInfo | IPieceJoindre | IMagasin | IFournisseur;
 })
 export class DemandeUpdateComponent implements OnInit {
   isSaving = false;
-  demandeinfos: IDemandeInfo[] = [];
-  piecejoindres: IPieceJoindre[] = [];
   magasins: IMagasin[] = [];
   fournisseurs: IFournisseur[] = [];
   dateBesionDp: any;
@@ -53,8 +47,6 @@ export class DemandeUpdateComponent implements OnInit {
     dateClouture: [],
     meilleurPrixMagasin: [],
     prixNegocie: [],
-    demandeInfos: [],
-    pieceJoindres: [],
     magasin: [],
     fournisseurMagasin: [],
     fournisseurFinal: [],
@@ -62,8 +54,6 @@ export class DemandeUpdateComponent implements OnInit {
 
   constructor(
     protected demandeService: DemandeService,
-    protected demandeInfoService: DemandeInfoService,
-    protected pieceJoindreService: PieceJoindreService,
     protected magasinService: MagasinService,
     protected fournisseurService: FournisseurService,
     protected activatedRoute: ActivatedRoute,
@@ -73,10 +63,6 @@ export class DemandeUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ demande }) => {
       this.updateForm(demande);
-
-      this.demandeInfoService.query().subscribe((res: HttpResponse<IDemandeInfo[]>) => (this.demandeinfos = res.body || []));
-
-      this.pieceJoindreService.query().subscribe((res: HttpResponse<IPieceJoindre[]>) => (this.piecejoindres = res.body || []));
 
       this.magasinService.query().subscribe((res: HttpResponse<IMagasin[]>) => (this.magasins = res.body || []));
 
@@ -105,8 +91,6 @@ export class DemandeUpdateComponent implements OnInit {
       dateClouture: demande.dateClouture,
       meilleurPrixMagasin: demande.meilleurPrixMagasin,
       prixNegocie: demande.prixNegocie,
-      demandeInfos: demande.demandeInfos,
-      pieceJoindres: demande.pieceJoindres,
       magasin: demande.magasin,
       fournisseurMagasin: demande.fournisseurMagasin,
       fournisseurFinal: demande.fournisseurFinal,
@@ -149,8 +133,6 @@ export class DemandeUpdateComponent implements OnInit {
       dateClouture: this.editForm.get(['dateClouture'])!.value,
       meilleurPrixMagasin: this.editForm.get(['meilleurPrixMagasin'])!.value,
       prixNegocie: this.editForm.get(['prixNegocie'])!.value,
-      demandeInfos: this.editForm.get(['demandeInfos'])!.value,
-      pieceJoindres: this.editForm.get(['pieceJoindres'])!.value,
       magasin: this.editForm.get(['magasin'])!.value,
       fournisseurMagasin: this.editForm.get(['fournisseurMagasin'])!.value,
       fournisseurFinal: this.editForm.get(['fournisseurFinal'])!.value,

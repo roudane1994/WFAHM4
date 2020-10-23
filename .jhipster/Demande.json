@@ -89,20 +89,6 @@
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "demandeInfo",
-      "otherEntityRelationshipName": "demande",
-      "relationshipName": "demandeInfos",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "pieceJoindre",
-      "otherEntityRelationshipName": "demande",
-      "relationshipName": "pieceJoindres",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
       "otherEntityName": "magasin",
       "otherEntityRelationshipName": "demande",
       "relationshipName": "magasin",

@@ -20,9 +20,7 @@
       "libelle": "Libelle",
       "rtr": "Rtr",
       "demande": "Demande",
-      "magasinUtilisateur": "Magasin Utilisateur",
-      "magasinUtilisateurs": "Magasin Utilisateurs",
-      "demandes": "Demandes"
+      "magasinUtilisateur": "Magasin Utilisateur"
     }
   }
 }

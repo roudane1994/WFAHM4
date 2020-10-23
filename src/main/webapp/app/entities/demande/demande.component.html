@@ -41,8 +41,6 @@
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.dateClouture">Date Clouture</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.meilleurPrixMagasin">Meilleur Prix Magasin</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.prixNegocie">Prix Negocie</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.demande.demandeInfos">Demande Infos</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.demande.pieceJoindres">Piece Joindres</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.magasin">Magasin</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.fournisseurMagasin">Fournisseur Magasin</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.demande.fournisseurFinal">Fournisseur Final</span></th>
@@ -70,16 +68,6 @@
                     <td>{{ demande.dateClouture | date:'mediumDate' }}</td>
                     <td>{{ demande.meilleurPrixMagasin }}</td>
                     <td>{{ demande.prixNegocie }}</td>
-                    <td>
-                        <div *ngIf="demande.demandeInfos">
-                            <a [routerLink]="['/demande-info', demande.demandeInfos?.id, 'view']" >{{ demande.demandeInfos?.id }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="demande.pieceJoindres">
-                            <a [routerLink]="['/piece-joindre', demande.pieceJoindres?.id, 'view']" >{{ demande.pieceJoindres?.id }}</a>
-                        </div>
-                    </td>
                     <td>
                         <div *ngIf="demande.magasin">
                             <a [routerLink]="['/magasin', demande.magasin?.id, 'view']" >{{ demande.magasin?.id }}</a>

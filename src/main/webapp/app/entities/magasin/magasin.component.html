@@ -26,8 +26,6 @@
                     <th scope="col" ><span jhiTranslate="wfahm4App.magasin.code">Code</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.magasin.libelle">Libelle</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm4App.magasin.rtr">Rtr</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.magasin.magasinUtilisateurs">Magasin Utilisateurs</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm4App.magasin.demandes">Demandes</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -37,16 +35,6 @@
                     <td>{{ magasin.code }}</td>
                     <td>{{ magasin.libelle }}</td>
                     <td>{{ magasin.rtr }}</td>
-                    <td>
-                        <div *ngIf="magasin.magasinUtilisateurs">
-                            <a [routerLink]="['/magasin-utilisateur', magasin.magasinUtilisateurs?.id, 'view']" >{{ magasin.magasinUtilisateurs?.id }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="magasin.demandes">
-                            <a [routerLink]="['/demande', magasin.demandes?.id, 'view']" >{{ magasin.demandes?.id }}</a>
-                        </div>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

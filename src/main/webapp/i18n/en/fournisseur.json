@@ -18,9 +18,7 @@
       },
       "libelle": "Libelle",
       "demande": "Demande",
-      "demande": "Demande",
-      "demandePourFournisseurMagasin": "Demande Pour Fournisseur Magasin",
-      "demandePourFournisseurFinal": "Demande Pour Fournisseur Final"
+      "demande": "Demande"
     }
   }
 }

@@ -20,18 +20,6 @@
                 <dd>
                     <span>{{ magasin.rtr }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm4App.magasin.magasinUtilisateurs">Magasin Utilisateurs</span></dt>
-                <dd>
-                    <div *ngIf="magasin.magasinUtilisateurs">
-                        <a [routerLink]="['/magasin-utilisateur', magasin.magasinUtilisateurs?.id, 'view']">{{ magasin.magasinUtilisateurs?.id }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="wfahm4App.magasin.demandes">Demandes</span></dt>
-                <dd>
-                    <div *ngIf="magasin.demandes">
-                        <a [routerLink]="['/demande', magasin.demandes?.id, 'view']">{{ magasin.demandes?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

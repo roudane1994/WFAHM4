@@ -28,22 +28,6 @@
                     <input type="text" class="form-control" name="rtr" id="field_rtr"
                            formControlName="rtr"/>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.magasinUtilisateurs" for="field_magasinUtilisateurs">Magasin Utilisateurs</label>
-                    <select class="form-control" id="field_magasinUtilisateurs" name="magasinUtilisateurs" formControlName="magasinUtilisateurs">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="magasinUtilisateurOption.id === editForm.get('magasinUtilisateurs')!.value?.id ? editForm.get('magasinUtilisateurs')!.value : magasinUtilisateurOption" *ngFor="let magasinUtilisateurOption of magasinutilisateurs; trackBy: trackById">{{ magasinUtilisateurOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm4App.magasin.demandes" for="field_demandes">Demandes</label>
-                    <select class="form-control" id="field_demandes" name="demandes" formControlName="demandes">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="demandeOption.id === editForm.get('demandes')!.value?.id ? editForm.get('demandes')!.value : demandeOption" *ngFor="let demandeOption of demandes; trackBy: trackById">{{ demandeOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>
