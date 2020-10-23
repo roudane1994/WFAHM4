@@ -1,0 +1,45 @@
+{
+  "name": "DemandeInfo",
+  "fields": [
+    {
+      "fieldName": "nordre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "infoDemande",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reponse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateDemande",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateReponse",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "demandeInfo",
+      "relationshipName": "demande",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023145257",
+  "entityTableName": "demande_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

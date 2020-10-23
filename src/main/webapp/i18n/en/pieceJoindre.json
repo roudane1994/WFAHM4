@@ -1,0 +1,25 @@
+{
+  "wfahm4App": {
+    "pieceJoindre": {
+      "home": {
+        "title": "Piece Joindres",
+        "createLabel": "Create a new Piece Joindre",
+        "createOrEditLabel": "Create or edit a Piece Joindre",
+        "notFound": "No Piece Joindres found"
+      },
+      "created": "A new Piece Joindre is created with identifier {{ param }}",
+      "updated": "A Piece Joindre is updated with identifier {{ param }}",
+      "deleted": "A Piece Joindre is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Piece Joindre {{ id }}?"
+      },
+      "detail": {
+        "title": "Piece Joindre"
+      },
+      "nordre": "Nordre",
+      "name": "Name",
+      "url": "Url",
+      "demande": "Demande"
+    }
+  }
+}

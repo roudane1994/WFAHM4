@@ -1,0 +1,24 @@
+{
+  "wfahm4App": {
+    "magasinUtilisateur": {
+      "home": {
+        "title": "Magasin Utilisateurs",
+        "createLabel": "Create a new Magasin Utilisateur",
+        "createOrEditLabel": "Create or edit a Magasin Utilisateur",
+        "notFound": "No Magasin Utilisateurs found"
+      },
+      "created": "A new Magasin Utilisateur is created with identifier {{ param }}",
+      "updated": "A Magasin Utilisateur is updated with identifier {{ param }}",
+      "deleted": "A Magasin Utilisateur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Magasin Utilisateur {{ id }}?"
+      },
+      "detail": {
+        "title": "Magasin Utilisateur"
+      },
+      "nordre": "Nordre",
+      "utilisateur": "Utilisateur",
+      "magasin": "Magasin"
+    }
+  }
+}

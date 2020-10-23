@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pieceJoindre">
+            <h2><span jhiTranslate="wfahm4App.pieceJoindre.detail.title">Piece Joindre</span> {{ pieceJoindre.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.pieceJoindre.nordre">Nordre</span></dt>
+                <dd>
+                    <span>{{ pieceJoindre.nordre }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.pieceJoindre.name">Name</span></dt>
+                <dd>
+                    <span>{{ pieceJoindre.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.pieceJoindre.url">Url</span></dt>
+                <dd>
+                    <span>{{ pieceJoindre.url }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.pieceJoindre.demande">Demande</span></dt>
+                <dd>
+                    <div *ngIf="pieceJoindre.demande">
+                        <a [routerLink]="['/demande', pieceJoindre.demande?.id, 'view']">{{ pieceJoindre.demande?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/piece-joindre', pieceJoindre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

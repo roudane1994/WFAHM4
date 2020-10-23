@@ -1,0 +1,37 @@
+{
+  "name": "PieceJoindre",
+  "fields": [
+    {
+      "fieldName": "nordre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "pieceJoindre",
+      "relationshipName": "demande",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201023145357",
+  "entityTableName": "piece_joindre",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

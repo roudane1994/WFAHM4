@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-demande-info-heading" jhiTranslate="wfahm4App.demandeInfo.home.createOrEditLabel">Create or edit a Demande Info</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.nordre" for="field_nordre">Nordre</label>
+                    <input type="number" class="form-control" name="nordre" id="field_nordre"
+                           formControlName="nordre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.infoDemande" for="field_infoDemande">Info Demande</label>
+                    <input type="text" class="form-control" name="infoDemande" id="field_infoDemande"
+                           formControlName="infoDemande"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.reponse" for="field_reponse">Reponse</label>
+                    <input type="text" class="form-control" name="reponse" id="field_reponse"
+                           formControlName="reponse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.dateDemande" for="field_dateDemande">Date Demande</label>
+                    <div class="input-group">
+                        <input id="field_dateDemande" type="text" class="form-control" name="dateDemande" ngbDatepicker #dateDemandeDp="ngbDatepicker" formControlName="dateDemande"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDemandeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.dateReponse" for="field_dateReponse">Date Reponse</label>
+                    <div class="input-group">
+                        <input id="field_dateReponse" type="text" class="form-control" name="dateReponse" ngbDatepicker #dateReponseDp="ngbDatepicker" formControlName="dateReponse"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateReponseDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="wfahm4App.demandeInfo.demande" for="field_demande">Demande</label>
+                    <select class="form-control" id="field_demande" name="demande" formControlName="demande">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="demandeOption.id === editForm.get('demande')!.value?.id ? editForm.get('demande')!.value : demandeOption" *ngFor="let demandeOption of demandes; trackBy: trackById">{{ demandeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

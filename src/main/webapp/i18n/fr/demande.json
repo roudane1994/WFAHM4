@@ -1,0 +1,46 @@
+{
+  "wfahm4App": {
+    "demande": {
+      "home": {
+        "title": "Demandes",
+        "createLabel": "Créer un nouveau Demande",
+        "createOrEditLabel": "Créer ou éditer un Demande",
+        "notFound": "Aucun Demande trouvé"
+      },
+      "created": "Un nouveau Demande a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Demande avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Demande avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Demande {{ id }} ?"
+      },
+      "detail": {
+        "title": "Demande"
+      },
+      "numero": "Numero",
+      "rtr": "Rtr",
+      "rtrLibelle": "Rtr Libelle",
+      "objet": "Objet",
+      "description": "Description",
+      "dateBesion": "Date Besion",
+      "dateCreation": "Date Creation",
+      "createur": "Createur",
+      "budget": "Budget",
+      "affectationLibelle": "Affectation Libelle",
+      "dateAffictation": "Date Affictation",
+      "moreInformation": "More Information",
+      "etat": "Etat",
+      "messageValidation": "Message Validation",
+      "messageClouture": "Message Clouture",
+      "dateClouture": "Date Clouture",
+      "meilleurPrixMagasin": "Meilleur Prix Magasin",
+      "prixNegocie": "Prix Negocie",
+      "demandeInfo": "Demande Info",
+      "pieceJoindre": "Piece Joindre",
+      "demandeInfos": "Demande Infos",
+      "pieceJoindres": "Piece Joindres",
+      "magasin": "Magasin",
+      "fournisseurMagasin": "Fournisseur Magasin",
+      "fournisseurFinal": "Fournisseur Final"
+    }
+  }
+}

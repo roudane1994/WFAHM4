@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="magasin">
+            <h2><span jhiTranslate="wfahm4App.magasin.detail.title">Magasin</span> {{ magasin.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.magasin.code">Code</span></dt>
+                <dd>
+                    <span>{{ magasin.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasin.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ magasin.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasin.rtr">Rtr</span></dt>
+                <dd>
+                    <span>{{ magasin.rtr }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasin.magasinUtilisateurs">Magasin Utilisateurs</span></dt>
+                <dd>
+                    <div *ngIf="magasin.magasinUtilisateurs">
+                        <a [routerLink]="['/magasin-utilisateur', magasin.magasinUtilisateurs?.id, 'view']">{{ magasin.magasinUtilisateurs?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasin.demandes">Demandes</span></dt>
+                <dd>
+                    <div *ngIf="magasin.demandes">
+                        <a [routerLink]="['/demande', magasin.demandes?.id, 'view']">{{ magasin.demandes?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/magasin', magasin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

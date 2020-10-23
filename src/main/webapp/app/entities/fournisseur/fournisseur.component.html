@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="wfahm4App.fournisseur.home.title">Fournisseurs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fournisseur" [routerLink]="['/fournisseur/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="wfahm4App.fournisseur.home.createLabel">
+            Create a new Fournisseur
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fournisseurs?.length === 0">
+        <span jhiTranslate="wfahm4App.fournisseur.home.notFound">No fournisseurs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fournisseurs && fournisseurs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.libelle">Libelle</span></th>
+                    <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurMagasin">Demande Pour Fournisseur Magasin</span></th>
+                    <th scope="col" ><span jhiTranslate="wfahm4App.fournisseur.demandePourFournisseurFinal">Demande Pour Fournisseur Final</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fournisseur of fournisseurs ;trackBy: trackId">
+                    <td><a [routerLink]="['/fournisseur', fournisseur.id, 'view']">{{ fournisseur.id }}</a></td>
+                    <td>{{ fournisseur.libelle }}</td>
+                    <td>
+                        <div *ngIf="fournisseur.demandePourFournisseurMagasin">
+                            <a [routerLink]="['/demande', fournisseur.demandePourFournisseurMagasin?.id, 'view']" >{{ fournisseur.demandePourFournisseurMagasin?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="fournisseur.demandePourFournisseurFinal">
+                            <a [routerLink]="['/demande', fournisseur.demandePourFournisseurFinal?.id, 'view']" >{{ fournisseur.demandePourFournisseurFinal?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fournisseur', fournisseur.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fournisseur', fournisseur.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fournisseur)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

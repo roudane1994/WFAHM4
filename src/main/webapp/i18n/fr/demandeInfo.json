@@ -1,0 +1,27 @@
+{
+  "wfahm4App": {
+    "demandeInfo": {
+      "home": {
+        "title": "DemandeInfos",
+        "createLabel": "Créer un nouveau Demande Info",
+        "createOrEditLabel": "Créer ou éditer un Demande Info",
+        "notFound": "Aucun Demande Info trouvé"
+      },
+      "created": "Un nouveau Demande Info a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Demande Info avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Demande Info avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Demande Info {{ id }} ?"
+      },
+      "detail": {
+        "title": "Demande Info"
+      },
+      "nordre": "Nordre",
+      "infoDemande": "Info Demande",
+      "reponse": "Reponse",
+      "dateDemande": "Date Demande",
+      "dateReponse": "Date Reponse",
+      "demande": "Demande"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "wfahm4App": {
+    "magasinUtilisateur": {
+      "home": {
+        "title": "MagasinUtilisateurs",
+        "createLabel": "Créer un nouveau Magasin Utilisateur",
+        "createOrEditLabel": "Créer ou éditer un Magasin Utilisateur",
+        "notFound": "Aucun Magasin Utilisateur trouvé"
+      },
+      "created": "Un nouveau Magasin Utilisateur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Magasin Utilisateur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Magasin Utilisateur avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Magasin Utilisateur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Magasin Utilisateur"
+      },
+      "nordre": "Nordre",
+      "utilisateur": "Utilisateur",
+      "magasin": "Magasin"
+    }
+  }
+}

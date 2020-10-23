@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Demande.
+    -->
+    <changeSet id="20201023145157-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="demande_infos_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_demande_infos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="demande_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="piece_joindres_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_piece_joindres_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="piece_joindre"/>
+
+        <addForeignKeyConstraint baseColumnNames="magasin_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_magasin_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="magasin"/>
+
+        <addForeignKeyConstraint baseColumnNames="fournisseur_magasin_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_fournisseur_magasin_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fournisseur"/>
+
+        <addForeignKeyConstraint baseColumnNames="fournisseur_final_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_fournisseur_final_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fournisseur"/>
+
+    </changeSet>
+</databaseChangeLog>

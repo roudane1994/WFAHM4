@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demande">
+            <h2><span jhiTranslate="wfahm4App.demande.detail.title">Demande</span> {{ demande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.demande.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ demande.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.rtr">Rtr</span></dt>
+                <dd>
+                    <span>{{ demande.rtr }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.rtrLibelle">Rtr Libelle</span></dt>
+                <dd>
+                    <span>{{ demande.rtrLibelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.objet">Objet</span></dt>
+                <dd>
+                    <span>{{ demande.objet }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.description">Description</span></dt>
+                <dd>
+                    <span>{{ demande.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.dateBesion">Date Besion</span></dt>
+                <dd>
+                    <span>{{ demande.dateBesion }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{ demande.dateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.createur">Createur</span></dt>
+                <dd>
+                    <span>{{ demande.createur }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.budget">Budget</span></dt>
+                <dd>
+                    <span>{{ demande.budget }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.affectationLibelle">Affectation Libelle</span></dt>
+                <dd>
+                    <span>{{ demande.affectationLibelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.dateAffictation">Date Affictation</span></dt>
+                <dd>
+                    <span>{{ demande.dateAffictation }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.moreInformation">More Information</span></dt>
+                <dd>
+                    <span>{{ demande.moreInformation }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.etat">Etat</span></dt>
+                <dd>
+                    <span>{{ demande.etat }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.messageValidation">Message Validation</span></dt>
+                <dd>
+                    <span>{{ demande.messageValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.messageClouture">Message Clouture</span></dt>
+                <dd>
+                    <span>{{ demande.messageClouture }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.dateClouture">Date Clouture</span></dt>
+                <dd>
+                    <span>{{ demande.dateClouture }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.meilleurPrixMagasin">Meilleur Prix Magasin</span></dt>
+                <dd>
+                    <span>{{ demande.meilleurPrixMagasin }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.prixNegocie">Prix Negocie</span></dt>
+                <dd>
+                    <span>{{ demande.prixNegocie }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.demandeInfos">Demande Infos</span></dt>
+                <dd>
+                    <div *ngIf="demande.demandeInfos">
+                        <a [routerLink]="['/demande-info', demande.demandeInfos?.id, 'view']">{{ demande.demandeInfos?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.pieceJoindres">Piece Joindres</span></dt>
+                <dd>
+                    <div *ngIf="demande.pieceJoindres">
+                        <a [routerLink]="['/piece-joindre', demande.pieceJoindres?.id, 'view']">{{ demande.pieceJoindres?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.magasin">Magasin</span></dt>
+                <dd>
+                    <div *ngIf="demande.magasin">
+                        <a [routerLink]="['/magasin', demande.magasin?.id, 'view']">{{ demande.magasin?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.fournisseurMagasin">Fournisseur Magasin</span></dt>
+                <dd>
+                    <div *ngIf="demande.fournisseurMagasin">
+                        <a [routerLink]="['/fournisseur', demande.fournisseurMagasin?.id, 'view']">{{ demande.fournisseurMagasin?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.demande.fournisseurFinal">Fournisseur Final</span></dt>
+                <dd>
+                    <div *ngIf="demande.fournisseurFinal">
+                        <a [routerLink]="['/fournisseur', demande.fournisseurFinal?.id, 'view']">{{ demande.fournisseurFinal?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande', demande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="magasinUtilisateur">
+            <h2><span jhiTranslate="wfahm4App.magasinUtilisateur.detail.title">Magasin Utilisateur</span> {{ magasinUtilisateur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="wfahm4App.magasinUtilisateur.nordre">Nordre</span></dt>
+                <dd>
+                    <span>{{ magasinUtilisateur.nordre }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasinUtilisateur.utilisateur">Utilisateur</span></dt>
+                <dd>
+                    <span>{{ magasinUtilisateur.utilisateur }}</span>
+                </dd>
+                <dt><span jhiTranslate="wfahm4App.magasinUtilisateur.magasin">Magasin</span></dt>
+                <dd>
+                    <div *ngIf="magasinUtilisateur.magasin">
+                        <a [routerLink]="['/magasin', magasinUtilisateur.magasin?.id, 'view']">{{ magasinUtilisateur.magasin?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/magasin-utilisateur', magasinUtilisateur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
